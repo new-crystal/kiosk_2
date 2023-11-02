@@ -1,0 +1,476 @@
+body {
+    width: 1080px;
+    height: 1920px;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+div{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/** animation */
+
+@keyframes blink-effect {
+    50% {
+      opacity: 0;
+    }
+  }
+
+/** index page */
+.background{
+    width: 1080px;
+    height: 1920px;
+    background: rgba(0,0,0,0.75);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.index_modal_cursor{
+    position: absolute;
+    top: 377px;
+    left: 100px;
+    z-index: 999;
+}
+
+.index_modal_text{
+    position: absolute;
+    top: 672px;
+    left: 175px;
+    animation: blink-effect 2s infinite;
+}
+
+.menu_container{
+    position: absolute;
+    top: 384px;
+    left: 47px;
+    z-index: 99;
+}
+
+.menu_container > img{
+    margin-right: 3px;
+    animation: blink-effect 2s infinite;
+}
+
+.info_menu_box{
+    position: absolute;
+    top: 435px;
+    left: -21px;
+}
+
+.libial_button{
+    position: absolute;
+    top: 657px;
+    left: 408px;
+    animation: blink-effect 2s infinite;
+}
+
+.web_menu_button{
+    position: absolute;
+    top: 460px;
+    left: 169px;
+    animation: blink-effect 2s infinite;
+}
+
+.web_menu_box{
+    position: absolute;
+    top: 435px;
+    left: -21px;
+}
+
+.home_box{
+    width: 1080px;
+    height: 365px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/** web page */
+.web_btn_1 {
+    position: absolute;
+    top: 960px;
+    left: 67px;
+    animation: blink-effect 2s infinite;
+}
+
+.web_btn_2 {
+    position: absolute;
+    top: 869px;
+    left: 466px;
+    animation: blink-effect 2s infinite;
+}
+
+.web_modal_1{
+    position: absolute;
+    top: 400px;
+    left: 190px;
+    z-index: 9999;
+}
+
+.web_modal_btn_1{
+    position: absolute;
+    top: 977px;
+    left: 469px;
+    z-index: 9999;
+    animation: blink-effect 2s infinite;
+}
+
+.web_modal_1_close_btn{
+    /* background-color: brown; */
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 415px;
+    left: 820px;
+    z-index: 9999;
+}
+
+.web_modal_2{
+    position: absolute;
+    top: 500px;
+    left: 190px;
+    z-index: 9999;
+}
+
+.web_modal_btn_2{
+    position: absolute;
+    top: 801px;
+    left: 468px;
+    z-index: 9999;
+    animation: blink-effect 2s infinite;
+}
+
+.web_modal_2_close_btn{
+    /* background-color: brown; */
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 520px;
+    left: 820px;
+    z-index: 9999;
+}
+
+.web_modal_input_1{
+    width: 569px;
+    height: 49px;
+    border: 1px solid #CECECE;
+    border-radius: 8px;
+    position: absolute;
+    top: 764px;
+    left: 261px;
+    z-index: 9999;
+    padding-left: 8px;
+}
+
+.web_modal_input_2{
+    width: 569px;
+    height: 49px;
+    border: 1px solid #CECECE;
+    border-radius: 8px;
+    position: absolute;
+    top: 885px;
+    left: 260px;
+    z-index: 9999;
+    padding-left: 8px;
+}
+
+.checkBox_1{
+    background-color: #CCC;
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    top: 667px;
+    left: 263px;
+    z-index: 9999;
+}
+
+.checkBox_2{
+    background-color: #CCC;
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    top: 667px;
+    left: 408px;
+    z-index: 9999;
+}
+
+.checkBox_3{
+    background-color: #CCC;
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    top: 667px;
+    left: 603px;
+    z-index: 9999;
+}
+
+/** web page 2 */
+
+.live_button{
+    position: absolute;
+    top: 869px;
+    left: 686px;
+    animation: blink-effect 2s infinite;
+}
+
+
+/** edu page */
+
+.edu_btn_1{
+    position: absolute;
+    top: 1021px;
+    left: 70px;
+    animation: blink-effect 2s infinite;
+}
+
+.edu_modal_1{
+    position: absolute;
+    top: 400px;
+    left: 190px;
+    z-index: 9999;
+}
+
+.edu_modal_btn_1{
+    position: absolute;
+    top: 1028px;
+    left: 460px;
+    animation: blink-effect 2s infinite;
+    z-index: 9999;
+}
+
+.edu_modal_1_close_btn{
+    /* background-color: brown; */
+    position: absolute;
+    top: 420px;
+    left: 820px;
+    width: 50px;
+    height: 50px;
+    z-index: 9999;
+}
+
+.edu_modal_2{
+    position: absolute;
+    top: 500px;
+    left: 190px;
+    z-index: 9999;
+}
+
+.edu_modal_btn_2{
+    position: absolute;
+    top: 795px;
+    left: 460px;
+    animation: blink-effect 2s infinite;
+    z-index: 9999;
+}
+
+.edu_modal_2_close_btn{
+    /* background-color: brown; */
+    position: absolute;
+    top: 520px;
+    left: 820px;
+    width: 50px;
+    height: 50px;
+    z-index: 9999;
+}
+
+.edu_modal_input_1{
+    width: 572px;
+    height: 50px;
+    border: 1px solid #CECECE;
+    border-radius: 8px;
+    position: absolute;
+    top: 745px;
+    left: 257px;
+    z-index: 9999;
+    padding: 8px;
+}
+
+.edu_modal_input_2{
+    width: 572px;
+    height: 120px;
+    border: 1px solid #CECECE;
+    border-radius: 8px;
+    position: absolute;
+    top: 877px;
+    left: 257px;
+    z-index: 9999;
+    resize: none;
+    padding: 8px;
+}
+
+
+/** etonogestrel page */
+
+.eton_btn_1{
+    position: absolute;
+    top: 870px;
+    left: 613px;
+    animation: blink-effect 2s infinite;
+}
+
+.eton_btn_2{
+    position: absolute;
+    top: 1263px;
+    left: 744px;
+    animation: blink-effect 2s infinite;
+}
+
+.eton_modal_1{
+    position: absolute;
+    top: 400px;
+    left: 190px;
+    z-index: 9999;
+}
+
+.eton_modal_1_close_btn{
+    /* background-color: brown; */
+    position: absolute;
+    top: 415px;
+    left: 820px;
+    width: 50px;
+    height: 50px;
+    z-index: 9999;
+}
+
+.eton_modal_btn_1{
+    position: absolute;
+    top: 1085px;
+    left: 686px;
+    animation: blink-effect 2s infinite;
+    z-index: 9999;
+}
+
+.eton_modal_2{
+    position: absolute;
+    top: 500px;
+    left: 190px;
+    z-index: 9999;
+}
+
+.eton_modal_2_close_btn{
+    /* background-color: brown; */
+    position: absolute;
+    top: 520px;
+    left: 820px;
+    width: 50px;
+    height: 50px;
+    z-index: 9999;
+}
+
+.eton_modal_btn_2{
+    position: absolute;
+    top: 795px;
+    left: 460px;
+    animation: blink-effect 2s infinite;
+    z-index: 9999;
+}
+
+.eton_video{
+    position: absolute;
+    top: 743px;
+    left: 35px;
+    width: 1006px;
+    height: 944px;
+}
+
+.next_page{
+    /* background-color: brown; */
+    width: 236px;
+    height: 76px;
+    position: absolute;
+    top: 1738px;
+    left: 423px;
+}
+
+
+/** connect page */
+.connect_btn{
+    position: absolute;
+    top: 1306px;
+    left: 340px;    
+    animation: blink-effect 2s infinite;
+}
+
+.gray_btn{
+    position: absolute;
+    top: 1386px;
+    left: 840px;
+}
+
+.orange_btn{
+    position: absolute;
+    top: 1386px;
+    left: 840px;
+    animation: blink-effect 2s infinite;
+}
+
+.select_box_1{
+    position: absolute;
+    border: 3px solid #FF4E00;
+    border-radius: 8px;
+    top: 1076px;
+    left: 80px;
+    width: 919px;
+    height: 54px;
+    animation: blink-effect 2s infinite;
+}
+
+.option_box_1{
+    position: absolute;
+    top: 1064px;
+    left: 80px;
+    width: 919px;
+    height: 210px;
+}
+
+.option_1{
+    position: absolute;
+    top: 1108px;
+    left: 99px;
+    animation: blink-effect 2s infinite;
+}
+
+.select_box_2{
+    position: absolute;
+    border: 3px solid #FF4E00;
+    border-radius: 8px;
+    top: 1176px;
+    left: 80px;
+    width: 918px;
+    height: 54px;
+    animation: blink-effect 2s infinite;
+}
+
+.option_box_2{
+    position: absolute;
+    top: 1179px;
+    left: 80px;
+    width: 919px;
+    height: 140px;
+}
+
+.option_2{
+    position: absolute;
+    top: 1224px;
+    left: 99px;
+    animation: blink-effect 2s infinite;
+}
+
+.connect_modal{
+    position: absolute;
+    top: 500px;
+    left: 190px;
+}
+
+.connect_modal_btn{
+    position: absolute;
+    top: 811px;
+    left: 460px;
+    animation: blink-effect 2s infinite;
+}
