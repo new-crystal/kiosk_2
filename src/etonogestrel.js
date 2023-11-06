@@ -6,7 +6,7 @@ const eton = document.querySelector("#eton");
 const connnect = document.querySelector("#connnect");
 const homeBoxes = document.querySelectorAll(".home_box");
 const menuBoxes = document.querySelectorAll(".menu_box");
-
+const body = document.querySelector("#body")
 
 /**menu box */
 let info_menu_toggle = false;
@@ -43,7 +43,8 @@ let infoTime;
 let webTime;
 
 /**menu button */
-info.addEventListener("click", ()=>{
+info.addEventListener("click", (e)=>{
+    e.stopPropagation()
     if(info_menu_toggle === true){
         clearTimeout(infoTime)
         info_menu.style.display = "none";
@@ -100,7 +101,8 @@ info.addEventListener("click", ()=>{
     }  
 })
 
-web.addEventListener("click", ()=>{
+web.addEventListener("click", (e)=>{
+    e.stopPropagation()
     if(web_menu_toggle === true){
 
         clearTimeout(webTime)
@@ -180,6 +182,53 @@ web_menu_button.addEventListener("animationend", ()=>{
     },100)
 })
 
+body.addEventListener("click", (e)=>{
+    clearTimeout(infoTime)
+    info_menu.style.display = "none";
+    libial_button.style.display = "none";
+    eton_btn_1.style.display = "";
+    info_menu_toggle = false;
+    libial_button.classList.add("fadeInUp_animation");  
+    libial_button.classList.remove("animation"); 
+
+    info.src = "./assets/menu/info_menu_off.png"
+    web.src = "./assets/menu/web_menu_off.png";
+    edu.src = "./assets/menu/edu_menu_off.png"
+    eton.src = "./assets/menu/etonogestrel_menu.png"
+    connnect.src = "./assets/menu/connect_menu_off.png"
+
+    info.classList.remove("animation");
+    libial_button.classList.remove("animation"); 
+
+    edu.classList.remove("animation");
+    eton.classList.remove("animation")
+    eton_btn_1.classList.remove("animation")
+    eton_btn_2.classList.remove("animation")
+
+    setTimeout(()=>{
+        eton.classList.add("animation")
+        eton_btn_1.classList.add("animation")
+        eton_btn_2.classList.add("animation")
+    },100)
+    
+    clearTimeout(webTime)
+    web_menu.style.display = "none";
+    web_menu_button.style.display = "none";
+    eton_btn_1.style.display = "";
+    web_menu_toggle = false;
+    web_menu_button.classList.add("fadeInUp_animation");  
+    web_menu_button.classList.remove("animation"); 
+
+    web.classList.remove("animation");
+    edu.classList.remove("animation");
+    eton_btn_1.classList.remove("animation")
+    eton_btn_2.classList.remove("animation")
+
+    menuBoxes.forEach((menuBox)=>{
+        menuBox.classList.remove("animation");
+    })
+
+})
 
 edu.addEventListener("click", ()=>{
     window.location.href = "edu.html"

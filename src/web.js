@@ -6,6 +6,7 @@ const eton = document.querySelector("#eton");
 const connnect = document.querySelector("#connnect");
 const menuBoxes = document.querySelectorAll(".menu_box")
 const homeBoxes = document.querySelectorAll(".home_box");
+const body = document.querySelector("#body")
 
 /**menu box */
 let info_menu_toggle = false;
@@ -46,7 +47,8 @@ let webTime;
 
 
 /**menu button */
-info.addEventListener("click", ()=>{
+info.addEventListener("click", (e)=>{
+    e.stopPropagation()
     if(info_menu_toggle === true){
 
         clearTimeout(infoTime)
@@ -106,7 +108,8 @@ info.addEventListener("click", ()=>{
     }  
 })
 
-web.addEventListener("click", ()=>{
+web.addEventListener("click", (e)=>{
+    e.stopPropagation()
     if(web_menu_toggle === true){
 
         clearTimeout(webTime)
@@ -188,7 +191,49 @@ web_menu_button.addEventListener("animationend", ()=>{
     },100)
 })
 
+body.addEventListener("click", ()=>{
 
+    clearTimeout(webTime)
+    web_menu.style.display = "none";
+    web_menu_button.style.display = "none";
+    web_btn_2.style.display = ""
+    web_menu_toggle = false;
+    web_menu_button.classList.add("fadeInUp_animation");  
+    web_menu_button.classList.remove("animation"); 
+
+    info.src = "./assets/menu/info_menu_off.png";
+    web.src = "./assets/menu/web_menu.png";
+    edu.src = "./assets/menu/edu_menu_off.png"
+    eton.src = "./assets/menu/etonogestrel_menu_off.png"
+    connnect.src = "./assets/menu/connect_menu_off.png"
+
+    web.classList.remove("animation");
+    web_btn_1.classList.remove("animation")
+    web_btn_2.classList.remove("animation")
+
+    menuBoxes.forEach((menuBox)=>{
+        menuBox.classList.remove("animation");
+    })
+
+    clearTimeout(infoTime)
+    info_menu.style.display = "none";
+    libial_button.style.display = "none";
+    web_btn_2.style.display = ""
+    info_menu_toggle = false;
+    libial_button.classList.add("fadeInUp_animation");  
+    libial_button.classList.remove("animation"); 
+
+    info.classList.remove("animation");
+    web_btn_1.classList.remove("animation")
+    web_btn_2.classList.remove("animation")
+
+    infoTime = setTimeout(()=>{
+        web.classList.add("animation");
+        web_btn_1.classList.add("animation")
+        web_btn_2.classList.add("animation")
+    }, 100)
+
+})
 
 edu.addEventListener("click", ()=>{
     window.location.href = "edu.html"
