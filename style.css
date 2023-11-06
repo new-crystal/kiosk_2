@@ -97,6 +97,7 @@ div{
     position: absolute;
     top: 435px;
     left: -21px;
+    animation: fadeInUp 0.3s;
 }
 
 .home_box{
@@ -476,10 +477,11 @@ div{
 ffedc8edddd1ae353
 
 /** connect page */
-.connect_btn{
+.connect_1_img_box > .connect_1_btn {
     position: absolute;
     top: 1306px;
-    left: 340px;    
+    left: 340px;  
+    z-index: 999;  
 }
 
 .gray_btn{
