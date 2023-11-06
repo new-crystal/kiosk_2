@@ -21,7 +21,7 @@ const web_menu_button = document.querySelector(".web_menu_button")
 
 /** connect page */
 const connect_1_img_box = document.querySelector(".connect_1_img_box")
-const connect_btn = document.querySelector(".connect_btn")
+const connect_btn = document.querySelector(".connect_1_btn")
 
 const connect_2_img_box = document.querySelector(".connect_2_img_box")
 const gray_btn = document.querySelector(".gray_btn")
