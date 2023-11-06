@@ -33,10 +33,14 @@ div{
     }
 }
 
+.fadeInUp_animation{
+    animation: fadeInUp 1.8s;
+}
 
 .animation{
     animation: blink-effect 2s infinite;
 }
+
 
 /** index page */
 .background{
@@ -78,10 +82,15 @@ div{
     top: 435px;
     left: -21px;
     animation: fadeInUp 0.8s;
-
 }
 
 .libial_button{
+    position: absolute;
+    top: 657px;
+    left: 408px;
+}
+
+.libial_button_animation{
     position: absolute;
     top: 657px;
     left: 408px;

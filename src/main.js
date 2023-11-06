@@ -31,6 +31,7 @@ info.addEventListener("click", ()=>{
         libial_button.style.display = "none";
         info_menu_toggle = false;
 
+        info.src = "./assets/menu/info_menu.png";
         web.src = "./assets/menu/web_menu.png";
         edu.src = "./assets/menu/edu_menu.png"
         eton.src = "./assets/menu/etonogestrel_menu.png"
@@ -61,11 +62,7 @@ info.addEventListener("click", ()=>{
             menuBox.classList.remove("animation");
         })
 
-       infoTime = setTimeout(()=>{
-            info.classList.add("animation");
-            libial_button.classList.add("animation");
-        },100)
-
+        info.src = "./assets/menu/info_menu.png";
         web.src = "./assets/menu/web_menu_off.png";
         edu.src = "./assets/menu/edu_menu_off.png"
         eton.src = "./assets/menu/etonogestrel_menu_off.png"
@@ -112,11 +109,6 @@ web.addEventListener("click", ()=>{
         menuBoxes.forEach((menuBox)=>{
             menuBox.classList.remove("animation");
         })
-
-        webTime = setTimeout(()=>{
-            web.classList.add("animation");
-            web_menu_button.classList.add("animation");
-        },100)
         
         info.src = "./assets/menu/info_menu_off.png"
         edu.src = "./assets/menu/edu_menu_off.png"
@@ -125,6 +117,29 @@ web.addEventListener("click", ()=>{
 
     }
 })
+
+
+/** 애니메이션 끝나고 다른 애니메이션 시작 */
+libial_button.addEventListener("animationend", ()=>{
+    libial_button.classList.remove("fadeInUp-animation");
+
+    setTimeout(()=>{
+        info.classList.add("animation");
+        libial_button.classList.add("animation");
+    },100)
+})
+
+
+web_menu_button.addEventListener("animationend", ()=>{
+    web_menu_button.classList.remove("fadeInUp-animation");
+
+    setTimeout(()=>{
+        web.classList.add("animation");
+        web_menu_button.classList.add("animation");
+    },100)
+})
+
+
 
 edu.addEventListener("click", ()=>{
     window.location.href = "edu.html"

@@ -50,6 +50,8 @@ info.addEventListener("click", ()=>{
         info_menu.style.display = "none";
         libial_button.style.display = "none";
         info_menu_toggle = false;
+        libial_button.classList.add("fadeInUp_animation");  
+        libial_button.classList.remove("animation");  
 
         info.src = "./assets/menu/info_menu_off.png"
         web.src = "./assets/menu/web_menu_off.png";
@@ -70,21 +72,17 @@ info.addEventListener("click", ()=>{
     }else{
         clearTimeout(infoTime)
         info_menu.style.display = "";
+        libial_button.style.display = "";
         web_menu.style.display = "none";
         web_menu_button.style.display = "none";
         info_menu_toggle = true;
         web_menu_toggle = false;
-        libial_button.classList.remove("animation"); 
-        
+        libial_button.classList.remove("animation");
+
         menuBoxes.forEach((menuBox)=>{
             menuBox.classList.remove("animation");
         })
         
-        infoTime = setTimeout(()=>{
-            libial_button.style.display = "";
-            info.classList.add("animation");
-            libial_button.classList.add("animation");
-        },100)
 
         info.src = "./assets/menu/info_menu.png"
         web.src = "./assets/menu/web_menu_off.png";
@@ -101,6 +99,8 @@ web.addEventListener("click", ()=>{
         web_menu.style.display = "none";
         web_menu_button.style.display = "none";
         web_menu_toggle = false;
+        web_menu_button.classList.add("fadeInUp_animation");  
+        web_menu_button.classList.remove("animation")
 
         info.src = "./assets/menu/info_menu_off.png";
         web.src = "./assets/menu/web_menu_off.png";
@@ -111,6 +111,7 @@ web.addEventListener("click", ()=>{
         web.classList.remove("animation");
         edu.classList.remove("animation");
         connect_btn.classList.remove("animation")
+        
 
         menuBoxes.forEach((menuBox)=>{
             menuBox.classList.remove("animation");
@@ -128,23 +129,42 @@ web.addEventListener("click", ()=>{
         web_menu_toggle = true;
         info_menu_toggle = false;
         web.src = "./assets/menu/web_menu.png";
-        web_menu_button.classList.remove("animation"); 
+        web_menu_button.classList.remove("animation");
+        web_menu_button.style.display = "";
         
         menuBoxes.forEach((menuBox)=>{
             menuBox.classList.remove("animation");
         })
-        
-        webTime = setTimeout(()=>{
-            web_menu_button.style.display = "";
-            web.classList.add("animation");
-            web_menu_button.classList.add("animation");
-        },100)
         
         info.src = "./assets/menu/info_menu_off.png"
         edu.src = "./assets/menu/edu_menu_off.png"
         eton.src = "./assets/menu/etonogestrel_menu_off.png"
         connnect.src = "./assets/menu/connect_menu_off.png"
     }
+})
+
+/** 애니메이션 끝나고 다른 애니메이션 시작 */
+libial_button.addEventListener("animationend", ()=>{
+    libial_button.classList.remove("fadeInUp-animation");
+    connect_btn.classList.remove("animation");
+
+    setTimeout(()=>{
+        info.classList.add("animation");
+        libial_button.classList.add("animation");
+        connect_btn.classList.add("animation")
+    },100)
+})
+
+
+web_menu_button.addEventListener("animationend", ()=>{
+    web_menu_button.classList.remove("fadeInUp-animation");
+    connect_btn.classList.remove("animation");
+
+    setTimeout(()=>{
+        web.classList.add("animation");
+        web_menu_button.classList.add("animation");
+        connect_btn.classList.add("animation")
+    },100)
 })
 
 
