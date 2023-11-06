@@ -6,6 +6,8 @@ const edu = document.querySelector("#edu");
 const eton = document.querySelector("#eton");
 const connnect = document.querySelector("#connnect");
 const homeBox = document.querySelector(".home_box");
+const menuBoxes = document.querySelectorAll(".menu_box")
+
 
 /**menu box */
 let info_menu_toggle = false;
@@ -18,32 +20,109 @@ const web_menu_button = document.querySelector(".web_menu_button")
 /**index page */
 const background = document.querySelector(".background");
 
+let infoTime;
+let webTime;
+
 /**menu button */
 info.addEventListener("click", ()=>{
     if(info_menu_toggle === true){
+        clearTimeout(infoTime)
         info_menu.style.display = "none";
         libial_button.style.display = "none";
         info_menu_toggle = false;
+
+        web.src = "./assets/menu/web_menu.png";
+        edu.src = "./assets/menu/edu_menu.png"
+        eton.src = "./assets/menu/etonogestrel_menu.png"
+        connnect.src = "./assets/menu/connect_menu.png"
+
+        info.classList.remove("animation");
+        libial_button.classList.remove("animation"); 
+
+      infoTime = setTimeout(()=>{
+            menuBoxes.forEach((menuBox)=>{
+                menuBox.classList.add("animation");
+            })
+        },100)
+
     }else{
+        clearTimeout(infoTime)
+
         info_menu.style.display = "";
         libial_button.style.display = "";
         web_menu.style.display = "none";
         web_menu_button.style.display = "none";
         info_menu_toggle = true;
+
+        web_menu_toggle = false;
+        libial_button.classList.remove("animation"); 
+
+        menuBoxes.forEach((menuBox)=>{
+            menuBox.classList.remove("animation");
+        })
+
+       infoTime = setTimeout(()=>{
+            info.classList.add("animation");
+            libial_button.classList.add("animation");
+        },100)
+
+        web.src = "./assets/menu/web_menu_off.png";
+        edu.src = "./assets/menu/edu_menu_off.png"
+        eton.src = "./assets/menu/etonogestrel_menu_off.png"
+        connnect.src = "./assets/menu/connect_menu_off.png"
+
     }  
 })
 
 web.addEventListener("click", ()=>{
     if(web_menu_toggle === true){
+
+        clearTimeout(webTime)
         web_menu.style.display = "none";
         web_menu_button.style.display = "none";
         web_menu_toggle = false;
+
+        info.src = "./assets/menu/info_menu.png";
+        web.src = "./assets/menu/web_menu.png";
+        edu.src = "./assets/menu/edu_menu.png"
+        eton.src = "./assets/menu/etonogestrel_menu.png"
+        connnect.src = "./assets/menu/connect_menu.png"
+
+        web.classList.remove("animation");
+
+        webTime = setTimeout(()=>{
+            menuBoxes.forEach((menuBox)=>{
+                menuBox.classList.add("animation");
+            })
+        },100)
+
+
     }else{
         web_menu.style.display = "";
         web_menu_button.style.display = "";
         info_menu.style.display = "none";
         libial_button.style.display = "none";
-        web_menu_toggle = false;
+
+        web_menu_toggle = true;
+        info_menu_toggle = false;
+        
+        web.src = "./assets/menu/web_menu.png";
+        web_menu_button.classList.remove("animation"); 
+
+        menuBoxes.forEach((menuBox)=>{
+            menuBox.classList.remove("animation");
+        })
+
+        webTime = setTimeout(()=>{
+            web.classList.add("animation");
+            web_menu_button.classList.add("animation");
+        },100)
+        
+        info.src = "./assets/menu/info_menu_off.png"
+        edu.src = "./assets/menu/edu_menu_off.png"
+        eton.src = "./assets/menu/etonogestrel_menu_off.png"
+        connnect.src = "./assets/menu/connect_menu_off.png"
+
     }
 })
 
@@ -63,7 +142,9 @@ connnect.addEventListener("click", ()=>{
 
 /**홈 버튼 */
 homeBox.addEventListener("click", ()=>{
-    window.location.href = "index.html";
+
+    window.location.href = "main.html";
+
 })
 
 /**리비알 버튼 클릭시 리비알 페이지로 이동 */
@@ -86,6 +167,11 @@ window.onload = () => {
     info_menu.style.display = "none";
     libial_button.style.display = "none";
 }
+
+window.addEventListener("beforeunload", ()=>{
+    clearTimeout(infoTime);
+    clearTimeout(webTime);
+})
 
  /**우클릭 방지 */
  document.addEventListener("contextmenu", function(event) {

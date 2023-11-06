@@ -4,6 +4,7 @@ body {
     overflow: hidden;
     margin: 0;
     padding: 0;
+    -webkit-touch-callout: none;
 }
 
 div{
@@ -19,6 +20,23 @@ div{
       opacity: 0;
     }
   }
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 5%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateZ(0);
+    }
+}
+
+
+.animation{
+    animation: blink-effect 2s infinite;
+}
 
 /** index page */
 .background{
@@ -53,27 +71,26 @@ div{
 
 .menu_container > img{
     margin-right: 3px;
-    animation: blink-effect 2s infinite;
 }
 
 .info_menu_box{
     position: absolute;
     top: 435px;
     left: -21px;
+    animation: fadeInUp 0.8s;
+
 }
 
 .libial_button{
     position: absolute;
     top: 657px;
     left: 408px;
-    animation: blink-effect 2s infinite;
 }
 
 .web_menu_button{
     position: absolute;
     top: 460px;
     left: 169px;
-    animation: blink-effect 2s infinite;
 }
 
 .web_menu_box{
@@ -96,7 +113,6 @@ div{
     position: absolute;
     top: 960px;
     left: 67px;
-    animation: blink-effect 2s infinite;
 }
 
 .web_btn_2 {
@@ -210,13 +226,48 @@ div{
     z-index: 9999;
 }
 
+.label_1{
+    width: 70px;
+    height: 39px;
+    position: absolute;
+    top: 660px;
+    left: 296px;
+    z-index: 9999;
+}
+
+.label_2{
+    width: 100px;
+    height: 39px;
+    position: absolute;
+    top: 660px;
+    left: 441px;
+    z-index: 9999;
+}
+
+.label_3{
+    width: 70px;
+    height: 39px;
+    position: absolute;
+    top: 660px;
+    left: 636px;
+    z-index: 9999;
+}
+
+
 /** web page 2 */
 
 .live_button{
     position: absolute;
     top: 869px;
     left: 686px;
-    animation: blink-effect 2s infinite;
+}
+
+.web_video{
+    width: 940px;
+    height: 596px;
+    position: absolute;
+    top: 769px;
+    left: 70px;
 }
 
 
@@ -226,7 +277,6 @@ div{
     position: absolute;
     top: 1021px;
     left: 70px;
-    animation: blink-effect 2s infinite;
 }
 
 .edu_modal_1{
@@ -311,14 +361,12 @@ div{
     position: absolute;
     top: 870px;
     left: 613px;
-    animation: blink-effect 2s infinite;
 }
 
 .eton_btn_2{
     position: absolute;
     top: 1263px;
     left: 744px;
-    animation: blink-effect 2s infinite;
 }
 
 .eton_modal_1{
@@ -388,13 +436,50 @@ div{
     left: 423px;
 }
 
+.eton_check_1{
+    width: 26px;
+    height: 26px;
+    background-color: #CCC;
+    position: absolute;
+    top: 721px;
+    left: 249px;
+    z-index: 9999;
+}
+
+.eton_check_2{
+    width: 26px;
+    height: 26px;
+    background-color: #CCC;
+    position: absolute;
+    top: 862px;
+    left: 249px;
+    z-index: 9999;
+}
+
+.eton_label_1{
+    width: 341px;
+    height: 45px;
+    position: absolute;
+    top: 712px;
+    left: 282px;
+    z-index: 9999;
+}
+
+.eton_label_2{
+    width: 306px;
+    height: 45px;
+    position: absolute;
+    top: 854px;
+    left: 282px;
+    z-index: 9999;
+}
+ffedc8edddd1ae353
 
 /** connect page */
 .connect_btn{
     position: absolute;
     top: 1306px;
     left: 340px;    
-    animation: blink-effect 2s infinite;
 }
 
 .gray_btn{
@@ -414,7 +499,7 @@ div{
     position: absolute;
     border: 3px solid #FF4E00;
     border-radius: 8px;
-    top: 1076px;
+    top: 1062px;
     left: 80px;
     width: 919px;
     height: 54px;
@@ -423,15 +508,15 @@ div{
 
 .option_box_1{
     position: absolute;
-    top: 1064px;
-    left: 80px;
-    width: 919px;
+    top: 1058px;
+    left: 73px;
+    width: 934px;
     height: 210px;
 }
 
 .option_1{
     position: absolute;
-    top: 1108px;
+    top: 1104px;
     left: 99px;
     animation: blink-effect 2s infinite;
 }
@@ -449,15 +534,15 @@ div{
 
 .option_box_2{
     position: absolute;
-    top: 1179px;
-    left: 80px;
-    width: 919px;
+    top: 1175px;
+    left: 73px;
+    width: 934px;
     height: 140px;
 }
 
 .option_2{
     position: absolute;
-    top: 1224px;
+    top: 1215px;
     left: 99px;
     animation: blink-effect 2s infinite;
 }
@@ -470,7 +555,7 @@ div{
 
 .connect_modal_btn{
     position: absolute;
-    top: 811px;
-    left: 460px;
+    top: 816px;
+    left: 468px;
     animation: blink-effect 2s infinite;
 }
