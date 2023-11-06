@@ -6,7 +6,7 @@ const eton = document.querySelector("#eton");
 const connnect = document.querySelector("#connnect");
 const homeBox = document.querySelector(".home_box");
 const menuBoxes = document.querySelectorAll(".menu_box");
-
+const body = document.querySelector("#body")
 
 /**menu box */
 let info_menu_toggle = false;
@@ -34,7 +34,8 @@ let webTime;
 
 
 /**menu button */
-info.addEventListener("click", ()=>{
+info.addEventListener("click", (e)=>{
+    e.stopPropagation()
     if(info_menu_toggle === true){
         clearTimeout(infoTime)
         info_menu.style.display = "none";
@@ -78,7 +79,8 @@ info.addEventListener("click", ()=>{
     }  
 })
 
-web.addEventListener("click", ()=>{
+web.addEventListener("click", (e)=>{
+    e.stopPropagation()
     if(web_menu_toggle === true){
 
         clearTimeout(webTime)
@@ -148,6 +150,41 @@ web_menu_button.addEventListener("animationend", ()=>{
     },100)
 })
 
+body.addEventListener("click", ()=>{
+    
+    clearTimeout(webTime)
+    web_menu.style.display = "none";
+    web_menu_button.style.display = "none";
+    web_menu_toggle = false;
+    web_menu_button.classList.add("fadeInUp_animation");  
+    web_menu_button.classList.remove("animation"); 
+
+    info.src = "./assets/menu/info_menu_off.png";
+    web.src = "./assets/menu/web_menu_off.png";
+    edu.src = "./assets/menu/edu_menu.png"
+    eton.src = "./assets/menu/etonogestrel_menu_off.png"
+    connnect.src = "./assets/menu/connect_menu_off.png"
+
+    web.classList.remove("animation");
+
+    menuBoxes.forEach((menuBox)=>{
+        menuBox.classList.remove("animation");
+    })
+
+    clearTimeout(infoTime)
+    info_menu.style.display = "none";
+    libial_button.style.display = "none";
+    info_menu_toggle = false;
+    libial_button.classList.add("fadeInUp_animation");  
+    libial_button.classList.remove("animation"); 
+
+    info.classList.remove("animation");
+    libial_button.classList.remove("animation"); 
+
+    edu.classList.remove("animation");
+    edu_btn_1.classList.remove("animation");
+
+})
 
 
 edu.addEventListener("click", ()=>{

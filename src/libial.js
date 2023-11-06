@@ -6,7 +6,7 @@ const eton = document.querySelector("#eton");
 const connnect = document.querySelector("#connnect");
 const homeBox = document.querySelector(".home_box");
 const menuBoxes = document.querySelectorAll(".menu_box");
-
+const body = document.querySelector("#body")
 
 /**menu box */
 let info_menu_toggle = false;
@@ -21,7 +21,8 @@ let infoTime;
 let webTime;
 
 /**menu button */
-info.addEventListener("click", ()=>{
+info.addEventListener("click", (e)=>{
+    e.stopPropagation()
     if(info_menu_toggle === true){
         clearTimeout(infoTime)
         info_menu.style.display = "none";
@@ -64,7 +65,8 @@ info.addEventListener("click", ()=>{
     }  
 })
 
-web.addEventListener("click", ()=>{
+web.addEventListener("click", (e)=>{
+    e.stopPropagation()
     if(web_menu_toggle === true){
 
         clearTimeout(webTime)
@@ -131,6 +133,37 @@ web_menu_button.addEventListener("animationend", ()=>{
     },100)
 })
 
+body.addEventListener("click", ()=>{
+    
+    clearTimeout(webTime)
+    web_menu.style.display = "none";
+    web_menu_button.style.display = "none";
+    web_menu_toggle = false;                                    
+    web_menu_button.classList.add("fadeInUp_animation");  
+    web_menu_button.classList.remove("animation"); 
+
+    info.src = "./assets/menu/info_menu.png";
+    web.src = "./assets/menu/web_menu_off.png";
+    edu.src = "./assets/menu/edu_menu_off.png"
+    eton.src = "./assets/menu/etonogestrel_menu_off.png"
+    connnect.src = "./assets/menu/connect_menu_off.png"
+
+    menuBoxes.forEach((menuBox)=>{
+        menuBox.classList.remove("animation");
+    })
+
+    info.classList.add("animation");
+
+    clearTimeout(infoTime)
+    info_menu.style.display = "none";
+    libial_button.style.display = "none";
+    info_menu_toggle = false;
+    libial_button.classList.add("fadeInUp_animation");  
+    libial_button.classList.remove("animation"); 
+
+    info.classList.add("animation")
+
+})
 
 edu.addEventListener("click", ()=>{
     window.location.href = "edu.html"

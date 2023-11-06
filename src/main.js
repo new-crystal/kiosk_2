@@ -7,7 +7,7 @@ const eton = document.querySelector("#eton");
 const connnect = document.querySelector("#connnect");
 const homeBox = document.querySelector(".home_box");
 const menuBoxes = document.querySelectorAll(".menu_box")
-
+const body = document.querySelector("#body")
 
 /**menu box */
 let info_menu_toggle = false;
@@ -24,7 +24,8 @@ let infoTime;
 let webTime;
 
 /**menu button */
-info.addEventListener("click", ()=>{
+info.addEventListener("click", (e)=>{
+    e.stopPropagation()
     if(info_menu_toggle === true){
         clearTimeout(infoTime)
         info_menu.style.display = "none";
@@ -71,7 +72,8 @@ info.addEventListener("click", ()=>{
     }  
 })
 
-web.addEventListener("click", ()=>{
+web.addEventListener("click", (e)=>{
+    e.stopPropagation()
     if(web_menu_toggle === true){
 
         clearTimeout(webTime)
@@ -99,6 +101,7 @@ web.addEventListener("click", ()=>{
         web_menu_button.style.display = "";
         info_menu.style.display = "none";
         libial_button.style.display = "none";
+        info.classList.remove("animation")
 
         web_menu_toggle = true;
         info_menu_toggle = false;
@@ -139,7 +142,35 @@ web_menu_button.addEventListener("animationend", ()=>{
     },100)
 })
 
+body.addEventListener("click", ()=>{
+    clearTimeout(webTime)
+    clearTimeout(infoTime)
+    info_menu.style.display = "none";
+    libial_button.style.display = "none";
+    web_menu.style.display = "none";
+    web_menu_button.style.display = "none";
+    web_menu_toggle = false;
+    info_menu_toggle = false;
 
+    info.src = "./assets/menu/info_menu.png";
+    web.src = "./assets/menu/web_menu.png";
+    edu.src = "./assets/menu/edu_menu.png"
+    eton.src = "./assets/menu/etonogestrel_menu.png"
+    connnect.src = "./assets/menu/connect_menu.png"
+
+    menuBoxes.forEach((menuBox)=>{
+        menuBox.classList.remove("animation");
+    })
+    
+    webTime = setTimeout(()=>{
+        menuBoxes.forEach((menuBox)=>{
+            menuBox.classList.add("animation");
+        })
+    },100)
+
+
+
+})
 
 edu.addEventListener("click", ()=>{
     window.location.href = "edu.html"
