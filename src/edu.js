@@ -7,6 +7,7 @@ const connnect = document.querySelector("#connnect");
 const homeBox = document.querySelector(".home_box");
 const menuBoxes = document.querySelectorAll(".menu_box");
 
+
 /**menu box */
 let info_menu_toggle = false;
 let web_menu_toggle = false;
@@ -30,6 +31,7 @@ const edu_modal_2_close_btn = document.querySelector(".edu_modal_2_close_btn")
 
 let infoTime;
 let webTime;
+
 
 /**menu button */
 info.addEventListener("click", ()=>{
@@ -87,6 +89,7 @@ info.addEventListener("click", ()=>{
 
 web.addEventListener("click", ()=>{
     if(web_menu_toggle === true){
+
         clearTimeout(webTime)
         web_menu.style.display = "none";
         web_menu_button.style.display = "none";
@@ -116,6 +119,7 @@ web.addEventListener("click", ()=>{
         web_menu_button.style.display = "";
         info_menu.style.display = "none";
         libial_button.style.display = "none";
+
         web_menu_toggle = true;
         info_menu_toggle = false;
         
@@ -172,6 +176,7 @@ edu_btn_1.addEventListener("click", ()=>{
     edu_modal_1.style.display = "";
     edu_modal_btn_1.style.display = "";
     edu_modal_1_close_btn.style.display = ""
+
     edu_modal_input_1.style.display = "";
     edu_modal_input_2.style.display = "";
 
@@ -192,6 +197,7 @@ edu_modal_1.addEventListener("click", (e)=>{
     e.stopPropagation();
 })
 
+
 edu_modal_input_1.addEventListener("click", (e)=>{
     e.stopPropagation()
 })
@@ -204,6 +210,7 @@ edu_modal_btn_1.addEventListener("click", (e)=>{
     e.stopPropagation();
     edu_modal_input_1.style.display = "none";
     edu_modal_input_2.style.display = "none";
+
     edu_modal_1.style.display = "none";
     edu_modal_2.style.display = "";
     edu_modal_btn_1.style.display = "none";
@@ -211,6 +218,7 @@ edu_modal_btn_1.addEventListener("click", (e)=>{
     edu_modal_1_close_btn.style.display = "none"
     edu_modal_2_close_btn.style.display = ""
 })
+
 
 let eduTime;
 window.onload = ()=>{

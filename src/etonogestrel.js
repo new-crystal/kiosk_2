@@ -7,6 +7,7 @@ const connnect = document.querySelector("#connnect");
 const homeBoxes = document.querySelectorAll(".home_box");
 const menuBoxes = document.querySelectorAll(".menu_box");
 
+
 /**menu box */
 let info_menu_toggle = false;
 let web_menu_toggle = false;
@@ -72,10 +73,12 @@ info.addEventListener("click", ()=>{
 
     }else{
         clearTimeout(infoTime)
+
         info_menu.style.display = "";
         libial_button.style.display = "";
         web_menu.style.display = "none";
         web_menu_button.style.display = "none";
+
         eton_btn_1.style.display = "none";
         info_menu_toggle = true;
         web_menu_toggle = false;
@@ -104,6 +107,7 @@ info.addEventListener("click", ()=>{
 
 web.addEventListener("click", ()=>{
     if(web_menu_toggle === true){
+
         clearTimeout(webTime)
         web_menu.style.display = "none";
         web_menu_button.style.display = "none";
@@ -131,11 +135,13 @@ web.addEventListener("click", ()=>{
             eton_btn_2.classList.add("animation")
         },100)
 
+
     }else{
         web_menu.style.display = "";
         web_menu_button.style.display = "";
         info_menu.style.display = "none";
         libial_button.style.display = "none";
+
         eton_btn_1.style.display = "";
         web_menu_toggle = true;
         info_menu_toggle = false;
@@ -180,6 +186,7 @@ connnect.addEventListener("click", ()=>{
 homeBoxes.forEach((homeBox)=>{
     homeBox.addEventListener("click", ()=>{
         window.location.href = "main.html";
+
     })
 })
 
@@ -200,7 +207,6 @@ eton_btn_1.addEventListener("click", ()=>{
     eton_modal_btn_1.style.display = "";
     eton_modal_1_close_btn.style.display = "";
 })
-
 
 /** 모달창 체크박스 이벤트 */
 let checkBox_1_toggle = false;
@@ -251,7 +257,6 @@ eton_label_2.addEventListener("click", (e)=>{
     }
 })
 
-
 background.addEventListener("click", ()=>{
     background.style.display = "none";
     
@@ -289,6 +294,7 @@ eton_btn_2.addEventListener("click", ()=>{
     etonogestrel_img_box_2.style.display = "";
     eton_video.play();
 })
+
 
 let etonTime;
 window.onload = ()=>{

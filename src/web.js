@@ -36,6 +36,7 @@ const label_1 = document.querySelector(".label_1")
 const label_2 = document.querySelector(".label_2")
 const label_3 = document.querySelector(".label_3")
 
+
 const web_modal_2 = document.querySelector(".web_modal_2");
 const web_modal_btn_2 = document.querySelector(".web_modal_btn_2");
 const web_modal_2_close_btn = document.querySelector(".web_modal_2_close_btn")
@@ -43,9 +44,11 @@ const web_modal_2_close_btn = document.querySelector(".web_modal_2_close_btn")
 let infoTime;
 let webTime;
 
+
 /**menu button */
 info.addEventListener("click", ()=>{
     if(info_menu_toggle === true){
+
         clearTimeout(infoTime)
         info_menu.style.display = "none";
         libial_button.style.display = "none";
@@ -73,10 +76,12 @@ info.addEventListener("click", ()=>{
 
     }else{
         clearTimeout(infoTime)
+
         info_menu.style.display = "";
         libial_button.style.display = "";
         web_menu.style.display = "none";
         web_menu_button.style.display = "none";
+
         web_btn_2.style.display = "none"
         info_menu_toggle = true;
         web_menu_toggle = false;
@@ -100,11 +105,13 @@ info.addEventListener("click", ()=>{
         edu.src = "./assets/menu/edu_menu_off.png"
         eton.src = "./assets/menu/etonogestrel_menu_off.png"
         connnect.src = "./assets/menu/connect_menu_off.png"
+
     }  
 })
 
 web.addEventListener("click", ()=>{
     if(web_menu_toggle === true){
+
         clearTimeout(webTime)
         web_menu.style.display = "none";
         web_menu_button.style.display = "none";
@@ -132,10 +139,12 @@ web.addEventListener("click", ()=>{
 
     }else{
         clearTimeout(webTime)
+
         web_menu.style.display = "";
         web_menu_button.style.display = "";
         info_menu.style.display = "none";
         libial_button.style.display = "none";
+
         web_btn_2.style.display = ""
         web_menu_toggle = true;
         info_menu_toggle = false;
@@ -160,6 +169,7 @@ web.addEventListener("click", ()=>{
         edu.src = "./assets/menu/edu_menu_off.png"
         eton.src = "./assets/menu/etonogestrel_menu_off.png"
         connnect.src = "./assets/menu/connect_menu_off.png"
+
     }
 })
 
@@ -180,6 +190,7 @@ connnect.addEventListener("click", ()=>{
 homeBoxes.forEach((homeBox)=>{
     homeBox.addEventListener("click", ()=>{
         window.location.href = "main.html";
+
     })
 })
 
@@ -197,6 +208,7 @@ web_menu_button.addEventListener("click", ()=>{
 web_btn_1.addEventListener("click", ()=>{
     web_page_1.style.display = "none";
     web_btn_1.style.display = "none";
+
     web_page_2.style.display = ""; 
     
     web.classList.remove("animation");
@@ -209,6 +221,7 @@ web_btn_1.addEventListener("click", ()=>{
 })
 
 /** 모달창 체크박스 이벤트 */
+
 let checkBox_1_toggle = false;
 let checkBox_2_toggle = false;
 let checkBox_3_toggle = false;
@@ -223,6 +236,7 @@ checkBox_1.addEventListener("click", (e)=>{
         checkBox_1_toggle = true;
     }
 })
+
 
 label_1.addEventListener("click", (e)=>{
     e.stopPropagation()
@@ -246,6 +260,7 @@ checkBox_2.addEventListener("click", (e)=>{
     }
 })
 
+
 label_2.addEventListener("click", (e)=>{
     e.stopPropagation()
     if(checkBox_2_toggle === true){
@@ -267,6 +282,7 @@ checkBox_3.addEventListener("click", (e)=>{
         checkBox_3_toggle = true;
     }
 })
+
 
 label_3.addEventListener("click", (e)=>{
     e.stopPropagation()

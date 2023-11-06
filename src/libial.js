@@ -7,6 +7,7 @@ const connnect = document.querySelector("#connnect");
 const homeBox = document.querySelector(".home_box");
 const menuBoxes = document.querySelectorAll(".menu_box");
 
+
 /**menu box */
 let info_menu_toggle = false;
 let web_menu_toggle = false;
@@ -14,6 +15,7 @@ const info_menu = document.querySelector(".info_menu_box");
 const libial_button = document.querySelector(".libial_button");
 const web_menu = document.querySelector(".web_menu_box");
 const web_menu_button = document.querySelector(".web_menu_button")
+
 
 let infoTime;
 let webTime;
@@ -39,6 +41,7 @@ info.addEventListener("click", ()=>{
 
     }else{
         clearTimeout(infoTime)
+
         info_menu.style.display = "";
         libial_button.style.display = "";
         web_menu.style.display = "none";
@@ -61,11 +64,13 @@ info.addEventListener("click", ()=>{
         edu.src = "./assets/menu/edu_menu_off.png"
         eton.src = "./assets/menu/etonogestrel_menu_off.png"
         connnect.src = "./assets/menu/connect_menu_off.png"
+
     }  
 })
 
 web.addEventListener("click", ()=>{
     if(web_menu_toggle === true){
+
         clearTimeout(webTime)
         web_menu.style.display = "none";
         web_menu_button.style.display = "none";
@@ -91,6 +96,7 @@ web.addEventListener("click", ()=>{
         web_menu_button.style.display = "";
         info_menu.style.display = "none";
         libial_button.style.display = "none";
+
         web_menu_toggle = true;
         info_menu_toggle = false;
         web.src = "./assets/menu/web_menu.png";
@@ -109,6 +115,7 @@ web.addEventListener("click", ()=>{
         edu.src = "./assets/menu/edu_menu_off.png"
         eton.src = "./assets/menu/etonogestrel_menu_off.png"
         connnect.src = "./assets/menu/connect_menu_off.png"
+
     }
 })
 
@@ -129,6 +136,7 @@ connnect.addEventListener("click", ()=>{
 /**홈 버튼 */
 homeBox.addEventListener("click", ()=>{
     window.location.href = "main.html";
+
 })
 
 /**리비알 버튼 클릭시 리비알 페이지로 이동 */
@@ -140,11 +148,11 @@ web_menu_button.addEventListener("click", ()=>{
     window.location.href = "webcast.html"
 })
 
+
 window.addEventListener("beforeunload", ()=>{
     clearTimeout(infoTime);
     clearTimeout(webTime);
 })
-
 
  /**우클릭 방지 */
  document.addEventListener("contextmenu", function(event) {

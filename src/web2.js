@@ -7,6 +7,7 @@ const connnect = document.querySelector("#connnect");
 const homeBoxes = document.querySelectorAll(".home_box");
 const menuBoxes = document.querySelectorAll(".menu_box");
 
+
 /**menu box */
 let info_menu_toggle = false;
 let web_menu_toggle = false;
@@ -81,11 +82,13 @@ info.addEventListener("click", ()=>{
         edu.src = "./assets/menu/edu_menu_off.png"
         eton.src = "./assets/menu/etonogestrel_menu_off.png"
         connnect.src = "./assets/menu/connect_menu_off.png"
+
     }  
 })
 
 web.addEventListener("click", ()=>{
     if(web_menu_toggle === true){
+
         clearTimeout(webTime)
         web_menu.style.display = "none";
         web_menu_button.style.display = "none";

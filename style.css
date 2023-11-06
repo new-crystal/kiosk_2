@@ -21,7 +21,6 @@ div{
     }
   }
 
-
 @keyframes fadeInUp {
     0% {
         opacity: 0;
@@ -79,27 +78,25 @@ div{
     top: 435px;
     left: -21px;
     animation: fadeInUp 0.8s;
+
 }
 
 .libial_button{
     position: absolute;
     top: 657px;
     left: 408px;
-    /* animation: blink-effect 2s infinite; */
 }
 
 .web_menu_button{
     position: absolute;
     top: 460px;
     left: 169px;
-    /* animation: blink-effect 2s infinite; */
 }
 
 .web_menu_box{
     position: absolute;
     top: 435px;
     left: -21px;
-    animation: fadeInUp 0.5s;
 }
 
 .home_box{
@@ -116,7 +113,6 @@ div{
     position: absolute;
     top: 960px;
     left: 67px;
-    /* animation: blink-effect 2s infinite; */
 }
 
 .web_btn_2 {
@@ -258,14 +254,12 @@ div{
 }
 
 
-
 /** web page 2 */
 
 .live_button{
     position: absolute;
     top: 869px;
     left: 686px;
-    /* animation: blink-effect 2s infinite; */
 }
 
 .web_video{
@@ -283,7 +277,6 @@ div{
     position: absolute;
     top: 1021px;
     left: 70px;
-    /* animation: blink-effect 2s infinite; */
 }
 
 .edu_modal_1{
@@ -368,14 +361,12 @@ div{
     position: absolute;
     top: 870px;
     left: 613px;
-    /* animation: blink-effect 2s infinite; */
 }
 
 .eton_btn_2{
     position: absolute;
     top: 1263px;
     left: 744px;
-    /* animation: blink-effect 2s infinite; */
 }
 
 .eton_modal_1{
@@ -482,13 +473,13 @@ div{
     left: 282px;
     z-index: 9999;
 }
+ffedc8edddd1ae353
 
 /** connect page */
 .connect_btn{
     position: absolute;
     top: 1306px;
     left: 340px;    
-    /* animation: blink-effect 2s infinite; */
 }
 
 .gray_btn{

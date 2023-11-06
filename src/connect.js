@@ -6,7 +6,9 @@ const edu = document.querySelector("#edu");
 const eton = document.querySelector("#eton");
 const connnect = document.querySelector("#connnect");
 const homeBoxes = document.querySelectorAll(".home_box");
+
 const menuBoxes = document.querySelectorAll(".menu_box");
+
 
 /**menu box */
 let info_menu_toggle = false;
@@ -36,6 +38,7 @@ const option_2 = document.querySelector(".option_2");
 const background = document.querySelector(".background")
 const connect_modal = document.querySelector(".connect_modal")
 const connect_modal_btn = document.querySelector(".connect_modal_btn")
+
 
 let infoTime;
 let webTime;
@@ -88,6 +91,7 @@ info.addEventListener("click", ()=>{
         edu.src = "./assets/menu/edu_menu_off.png"
         eton.src = "./assets/menu/etonogestrel_menu_off.png"
         connnect.src = "./assets/menu/connect_menu_off.png"
+
     }  
 })
 
@@ -161,7 +165,7 @@ connnect.addEventListener("click", ()=>{
 /**홈 버튼 */
 homeBoxes.forEach((homeBox)=>{
     homeBox.addEventListener("click", ()=>{
-        window.location.href = "main.html";
+    window.location.href = "main.html";
     })
 })
 /**리비알 버튼 클릭시 리비알 페이지로 이동 */
@@ -247,7 +251,6 @@ window.addEventListener("beforeunload", ()=>{
     clearTimeout(infoTime);
     clearTimeout(webTime);
 })
-
 
 
  /**우클릭 방지 */

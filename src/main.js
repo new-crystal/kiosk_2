@@ -8,6 +8,7 @@ const connnect = document.querySelector("#connnect");
 const homeBox = document.querySelector(".home_box");
 const menuBoxes = document.querySelectorAll(".menu_box")
 
+
 /**menu box */
 let info_menu_toggle = false;
 let web_menu_toggle = false;
@@ -46,11 +47,13 @@ info.addEventListener("click", ()=>{
 
     }else{
         clearTimeout(infoTime)
+
         info_menu.style.display = "";
         libial_button.style.display = "";
         web_menu.style.display = "none";
         web_menu_button.style.display = "none";
         info_menu_toggle = true;
+
         web_menu_toggle = false;
         libial_button.classList.remove("animation"); 
 
@@ -67,11 +70,13 @@ info.addEventListener("click", ()=>{
         edu.src = "./assets/menu/edu_menu_off.png"
         eton.src = "./assets/menu/etonogestrel_menu_off.png"
         connnect.src = "./assets/menu/connect_menu_off.png"
+
     }  
 })
 
 web.addEventListener("click", ()=>{
     if(web_menu_toggle === true){
+
         clearTimeout(webTime)
         web_menu.style.display = "none";
         web_menu_button.style.display = "none";
@@ -91,11 +96,13 @@ web.addEventListener("click", ()=>{
             })
         },100)
 
+
     }else{
         web_menu.style.display = "";
         web_menu_button.style.display = "";
         info_menu.style.display = "none";
         libial_button.style.display = "none";
+
         web_menu_toggle = true;
         info_menu_toggle = false;
         
@@ -115,6 +122,7 @@ web.addEventListener("click", ()=>{
         edu.src = "./assets/menu/edu_menu_off.png"
         eton.src = "./assets/menu/etonogestrel_menu_off.png"
         connnect.src = "./assets/menu/connect_menu_off.png"
+
     }
 })
 
@@ -134,7 +142,9 @@ connnect.addEventListener("click", ()=>{
 
 /**홈 버튼 */
 homeBox.addEventListener("click", ()=>{
+
     window.location.href = "main.html";
+
 })
 
 /**리비알 버튼 클릭시 리비알 페이지로 이동 */
@@ -158,12 +168,10 @@ window.onload = () => {
     libial_button.style.display = "none";
 }
 
-
 window.addEventListener("beforeunload", ()=>{
     clearTimeout(infoTime);
     clearTimeout(webTime);
 })
-
 
  /**우클릭 방지 */
  document.addEventListener("contextmenu", function(event) {
