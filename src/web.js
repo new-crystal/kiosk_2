@@ -48,6 +48,7 @@ let webTime;
 
 /**menu button */
 info.addEventListener("click", (e)=>{
+    resetTimer() 
     e.stopPropagation()
     if(info_menu_toggle === true){
 
@@ -58,7 +59,6 @@ info.addEventListener("click", (e)=>{
         info_menu_toggle = false;
         libial_button.classList.add("fadeInUp_animation");  
         libial_button.classList.remove("animation"); 
-
 
         info.src = "./assets/menu/info_menu_off.png"
         web.src = "./assets/menu/web_menu.png";
@@ -76,7 +76,7 @@ info.addEventListener("click", (e)=>{
 
         infoTime = setTimeout(()=>{
             web.classList.add("animation");
-            web_btn_1.classList.add("animation")
+            webs_btn_1.classList.add("animation")
             web_btn_2.classList.add("animation")
         }, 100)
 
@@ -92,6 +92,7 @@ info.addEventListener("click", (e)=>{
         info_menu_toggle = true;
         web_menu_toggle = false;
         libial_button.classList.remove("animation"); 
+        libial_button.classList.add("fadeInUp_animation");  
         web_btn_1.classList.remove("animation");
         web_btn_2.classList.remove("animation")
 
@@ -109,6 +110,7 @@ info.addEventListener("click", (e)=>{
 })
 
 web.addEventListener("click", (e)=>{
+    resetTimer() 
     e.stopPropagation()
     if(web_menu_toggle === true){
 
@@ -134,6 +136,13 @@ web.addEventListener("click", (e)=>{
             menuBox.classList.remove("animation");
         })
 
+        webTime = setTimeout(()=>{
+            web.classList.add("animation");
+            eton_btn_1.classList.add("animation")
+            eton_btn_2.classList.add("animation")
+        }, 100)
+
+
     }else{
         clearTimeout(webTime)
 
@@ -148,6 +157,7 @@ web.addEventListener("click", (e)=>{
         
         web.src = "./assets/menu/web_menu.png";
         web_menu_button.classList.remove("animation"); 
+        web_menu_button.classList.add("fadeInUp_animation")
         web_btn_1.classList.remove("animation")
         web_btn_2.classList.remove("animation")
 
@@ -165,7 +175,7 @@ web.addEventListener("click", (e)=>{
 
 /** 애니메이션 끝나고 다른 애니메이션 시작 */
 libial_button.addEventListener("animationend", ()=>{
-    libial_button.classList.remove("fadeInUp-animation");
+    libial_button.classList.remove("fadeInUp_animation");
     web_btn_1.classList.remove("animation");
     web_btn_2.classList.remove("animation")
 
@@ -179,7 +189,7 @@ libial_button.addEventListener("animationend", ()=>{
 
 
 web_menu_button.addEventListener("animationend", ()=>{
-    web_menu_button.classList.remove("fadeInUp-animation");
+    web_menu_button.classList.remove("fadeInUp_animation");
     web_btn_1.classList.remove("animation");
     web_btn_2.classList.remove("animation")
 
@@ -192,7 +202,7 @@ web_menu_button.addEventListener("animationend", ()=>{
 })
 
 body.addEventListener("click", ()=>{
-
+    resetTimer() 
     clearTimeout(webTime)
     web_menu.style.display = "none";
     web_menu_button.style.display = "none";
@@ -268,6 +278,7 @@ web_menu_button.addEventListener("click", ()=>{
 
 /**강의 세부정보 버튼 클릭 이벤트 */
 web_btn_1.addEventListener("click", ()=>{
+    resetTimer() 
     web_page_1.style.display = "none";
     web_btn_1.style.display = "none";
 
@@ -289,6 +300,7 @@ let checkBox_2_toggle = false;
 let checkBox_3_toggle = false;
 
 checkBox_1.addEventListener("click", (e)=>{
+    resetTimer() 
     e.stopPropagation()
     if(checkBox_1_toggle === true){
         checkBox_1.style.opacity = 0;
@@ -301,6 +313,7 @@ checkBox_1.addEventListener("click", (e)=>{
 
 
 label_1.addEventListener("click", (e)=>{
+    resetTimer() 
     e.stopPropagation()
     if(checkBox_1_toggle === true){
         checkBox_1.style.opacity = 0;
@@ -312,6 +325,7 @@ label_1.addEventListener("click", (e)=>{
 })
 
 checkBox_2.addEventListener("click", (e)=>{
+    resetTimer() 
     e.stopPropagation()
     if(checkBox_2_toggle === true){
         checkBox_2.style.opacity = 0;
@@ -324,6 +338,7 @@ checkBox_2.addEventListener("click", (e)=>{
 
 
 label_2.addEventListener("click", (e)=>{
+    resetTimer() 
     e.stopPropagation()
     if(checkBox_2_toggle === true){
         checkBox_2.style.opacity = 0;
@@ -335,6 +350,7 @@ label_2.addEventListener("click", (e)=>{
 })
 
 checkBox_3.addEventListener("click", (e)=>{
+    resetTimer() 
     e.stopPropagation()
     if(checkBox_3_toggle === true){
         checkBox_3.style.opacity = 0;
@@ -347,6 +363,7 @@ checkBox_3.addEventListener("click", (e)=>{
 
 
 label_3.addEventListener("click", (e)=>{
+    resetTimer() 
     e.stopPropagation()
     if(checkBox_3_toggle === true){
         checkBox_3.style.opacity = 0;
@@ -359,6 +376,7 @@ label_3.addEventListener("click", (e)=>{
 
 /** 사전등록 버튼 클릭 이벤트 */
 web_btn_2.addEventListener("click", ()=>{
+    resetTimer() 
     web_modal_1.style.display = "";
     web_modal_btn_1.style.display = "";
     web_modal_1_close_btn.style.display = "";
@@ -371,19 +389,23 @@ web_btn_2.addEventListener("click", ()=>{
 })
 
 web_modal_1.addEventListener("click", (e)=>{
+    resetTimer() 
     e.stopPropagation();
 })
 
 web_modal_input_1.addEventListener("click", (e)=>{
+    resetTimer() 
     e.stopPropagation();
 })
 
 web_modal_input_2.addEventListener("click", (e)=>{
+    resetTimer() 
     e.stopPropagation();
 })
 
 /**뒷 배경 클릭 이벤트 */
 background.addEventListener("click", ()=>{
+    resetTimer() 
     web_modal_1.style.display = "none";
     web_modal_btn_1.style.display = "none";
     web_modal_1_close_btn.style.display = "none";
@@ -397,6 +419,7 @@ background.addEventListener("click", ()=>{
 })
 
 web_modal_btn_1.addEventListener("click", (e)=>{
+    resetTimer() 
     e.stopPropagation();
     web_modal_1.style.display = "none";
     web_modal_btn_1.style.display = "none";
@@ -410,16 +433,19 @@ web_modal_btn_1.addEventListener("click", (e)=>{
 })
 
 web_modal_2.addEventListener("click", (e)=>{
+    resetTimer() 
     e.stopPropagation();
 })
 
 web_modal_btn_2.addEventListener("click", (e)=>{
+    resetTimer() 
     e.stopPropagation();
     window.location.href = "webcast2.html"
 })
 
 
 window.onload = ()=>{
+    resetTimer() 
     web.classList.add("animation");
     web_btn_1.classList.add("animation")
 }
@@ -454,3 +480,14 @@ event.preventDefault(); // 기본 동작을 막습니다.
 document.addEventListener("selectstart", function (event) {
 event.preventDefault(); // 선택을 방지합니다.
 });
+
+let timeoutID;
+// 이벤트가 발생하면 기존 타이머를 취소하고 새로운 타이머 시작
+function resetTimer() {
+    clearTimeout(timeoutID);
+    timeoutID = setTimeout(goToMainScreen, 180000);
+  }
+  
+  function goToMainScreen() {
+    window.location.href = "main.html"
+  }
