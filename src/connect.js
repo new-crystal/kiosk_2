@@ -44,6 +44,7 @@ let webTime;
 
 /**menu button */
 info.addEventListener("click", (e)=>{
+    resetTimer()
     e.stopPropagation()
     if(info_menu_toggle === true){
         clearTimeout(infoTime)
@@ -78,7 +79,7 @@ info.addEventListener("click", (e)=>{
         info_menu_toggle = true;
         web_menu_toggle = false;
         libial_button.classList.remove("animation");
-
+        libial_button.classList.add("fadeInUp_animation");  
         menuBoxes.forEach((menuBox)=>{
             menuBox.classList.remove("animation");
         })
@@ -94,14 +95,15 @@ info.addEventListener("click", (e)=>{
 })
 
 web.addEventListener("click", (e)=>{
+    resetTimer()
     e.stopPropagation()
     if(web_menu_toggle === true){
         clearTimeout(webTime)
         web_menu.style.display = "none";
         web_menu_button.style.display = "none";
         web_menu_toggle = false;
-        web_menu_button.classList.add("fadeInUp_animation");  
         web_menu_button.classList.remove("animation")
+        web_menu_button.classList.add("fadeInUp_animation");  
 
         info.src = "./assets/menu/info_menu_off.png";
         web.src = "./assets/menu/web_menu_off.png";
@@ -131,6 +133,7 @@ web.addEventListener("click", (e)=>{
         info_menu_toggle = false;
         web.src = "./assets/menu/web_menu.png";
         web_menu_button.classList.remove("animation");
+        web_menu_button.classList.add("fadeInUp_animation");  
         web_menu_button.style.display = "";
         
         menuBoxes.forEach((menuBox)=>{
@@ -146,7 +149,7 @@ web.addEventListener("click", (e)=>{
 
 /** 애니메이션 끝나고 다른 애니메이션 시작 */
 libial_button.addEventListener("animationend", ()=>{
-    libial_button.classList.remove("fadeInUp-animation");
+    libial_button.classList.remove("fadeInUp_animation");
     connect_btn.classList.remove("animation");
 
     setTimeout(()=>{
@@ -158,7 +161,7 @@ libial_button.addEventListener("animationend", ()=>{
 
 
 web_menu_button.addEventListener("animationend", ()=>{
-    web_menu_button.classList.remove("fadeInUp-animation");
+    web_menu_button.classList.remove("fadeInUp_animation");
     connect_btn.classList.remove("animation");
 
     setTimeout(()=>{
@@ -169,6 +172,7 @@ web_menu_button.addEventListener("animationend", ()=>{
 })
 
 body.addEventListener("click", ()=>{
+    resetTimer()
     clearTimeout(webTime)
     web_menu.style.display = "none";
     web_menu_button.style.display = "none";
@@ -239,17 +243,20 @@ web_menu_button.addEventListener("click", ()=>{
 })
 
 connect_btn.addEventListener("click", ()=>{
+    resetTimer()
     connect_1_img_box.style.display = "none";
     connect_2_img_box.style.display = "";
 })
 
 select_box_1.addEventListener("click", ()=>{
+    resetTimer()
     select_box_1.style.display = "none";
     option_box_1.style.display = "";
     option_1.style.display = "";
 })
 
 option_1.addEventListener("click", ()=>{
+    resetTimer()
     option_box_1.style.display = "none";
     option_1.style.display = "none";
 
@@ -257,6 +264,7 @@ option_1.addEventListener("click", ()=>{
 })
 
 option_box_1.addEventListener("click", ()=>{
+    resetTimer()
     option_box_1.style.display = "none";
     option_1.style.display = "none";
 
@@ -264,12 +272,14 @@ option_box_1.addEventListener("click", ()=>{
 })
 
 select_box_2.addEventListener("click", ()=>{
+    resetTimer()
     select_box_2.style.display = "none"
     option_box_2.style.display = "";
     option_2.style.display = "";
 })
 
 option_2.addEventListener("click", ()=>{
+    resetTimer()
     option_box_2.style.display = "none";
     option_2.style.display = "none"
     gray_btn.style.display = "none";
@@ -277,6 +287,7 @@ option_2.addEventListener("click", ()=>{
 })
 
 option_box_2.addEventListener("click", ()=>{
+    resetTimer()
     option_box_2.style.display = "none";
     option_2.style.display = "none"
     gray_btn.style.display = "none";
@@ -284,12 +295,14 @@ option_box_2.addEventListener("click", ()=>{
 })
 
 orange_btn.addEventListener("click", ()=>{
+    resetTimer()
     background.style.display = "";
     connect_modal.style.display = "";
     connect_modal_btn.style.display = "";
 })
 
 background.addEventListener("click", ()=>{
+    resetTimer()
     background.style.display = "none";
     connect_modal.style.display = "none";
     connect_modal_btn.style.display = "none";
@@ -300,6 +313,7 @@ connect_modal_btn.addEventListener("click", ()=>{
 })
 
 window.onload = () => {
+    resetTimer()
     clearTimeout(infoTime);
     clearTimeout(webTime);
 
@@ -337,3 +351,14 @@ document.body.addEventListener('touchstart', function(e) {
 document.addEventListener("selectstart", function (event) {
     event.preventDefault(); // 선택을 방지합니다.
 });
+
+let timeoutID;
+// 이벤트가 발생하면 기존 타이머를 취소하고 새로운 타이머 시작
+function resetTimer() {
+    clearTimeout(timeoutID);
+    timeoutID = setTimeout(goToMainScreen, 180000);
+  }
+  
+  function goToMainScreen() {
+    window.location.href = "main.html"
+  }

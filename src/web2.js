@@ -30,6 +30,7 @@ let webTime;
 
 /**menu button */
 info.addEventListener("click", (e)=>{
+    resetTimer()
     e.stopPropagation()
     if(info_menu_toggle === true){
         clearTimeout(infoTime)
@@ -69,6 +70,7 @@ info.addEventListener("click", (e)=>{
         web_menu_toggle = false;
         libial_button.classList.remove("animation"); 
         live_button.classList.remove("animation")
+        libial_button.classList.add("fadeInUp_animation")
 
         menuBoxes.forEach((menuBox)=>{
             menuBox.classList.remove("animation");
@@ -84,6 +86,7 @@ info.addEventListener("click", (e)=>{
 })
 
 web.addEventListener("click", (e)=>{
+    resetTimer()
     e.stopPropagation()
     if(web_menu_toggle === true){
 
@@ -119,7 +122,8 @@ web.addEventListener("click", (e)=>{
         info_menu_toggle = false;
         
         web.src = "./assets/menu/web_menu.png";
-        web_menu_button.classList.remove("animation"); 
+        web_menu_button.classList.remove("animation");
+        web_menu_button.classList.add("fadeInUp_animation") 
         live_button.classList.remove("animation")
 
         menuBoxes.forEach((menuBox)=>{
@@ -135,7 +139,7 @@ web.addEventListener("click", (e)=>{
 
 /** 애니메이션 끝나고 다른 애니메이션 시작 */
 libial_button.addEventListener("animationend", ()=>{
-    libial_button.classList.remove("fadeInUp-animation");
+    libial_button.classList.remove("fadeInUp_animation");
     live_button.classList.remove("animation");
 
     setTimeout(()=>{
@@ -147,7 +151,7 @@ libial_button.addEventListener("animationend", ()=>{
 
 
 web_menu_button.addEventListener("animationend", ()=>{
-    web_menu_button.classList.remove("fadeInUp-animation");
+    web_menu_button.classList.remove("fadeInUp_animation");
     live_button.classList.remove("animation");
 
     setTimeout(()=>{
@@ -158,7 +162,7 @@ web_menu_button.addEventListener("animationend", ()=>{
 })
 
 body.addEventListener("click", ()=>{
-    
+    resetTimer()
     clearTimeout(webTime)
     web_menu.style.display = "none";
     web_menu_button.style.display = "none";
@@ -232,9 +236,11 @@ live_button.addEventListener("click", ()=>{
     web2_img_box_2.style.display = ""
 
     web_video.play();
+    resetTimer()
 })
 
 window.onload = ()=>{
+    resetTimer()
     clearTimeout(infoTime);
     clearTimeout(webTime);
     web.classList.add("animation")
@@ -270,3 +276,16 @@ event.preventDefault(); // 기본 동작을 막습니다.
 document.addEventListener("selectstart", function (event) {
 event.preventDefault(); // 선택을 방지합니다.
 });
+
+
+
+let timeoutID;
+// 이벤트가 발생하면 기존 타이머를 취소하고 새로운 타이머 시작
+function resetTimer() {
+    clearTimeout(timeoutID);
+    timeoutID = setTimeout(goToMainScreen, 180000);
+  }
+  
+  function goToMainScreen() {
+    window.location.href = "main.html"
+  }
